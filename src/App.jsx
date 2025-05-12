@@ -1,10 +1,22 @@
 import React from 'react'
+import Home from "./pages/Home/Home"
+import Login from "./pages/Auth/Login"
+import SignUp from "./pages/Auth/SignUp"
+
+import { BrowserRouter, Routes, Route } from "react-router-dom"
 
 const App = () => {
   return (
-    <div className='text-red-500 text-4xl'>
-      APP
-    </div>
+    <>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" exact element={<Home />} />
+          <Route path="/login" exact element={<Login />} />
+          <Route path="/sign-up" exact element={<SignUp />} />
+        </Routes>
+      </BrowserRouter>
+
+    </>
   )
 }
 
